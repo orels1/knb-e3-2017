@@ -1,16 +1,16 @@
 # Kanobu E3 2017
 >All aboard the hype train!
 
-## Развертывание
+## Deployment
 
-### Что нужно на машине
+### Things you need
 
 - Node 7.10
 - MongoDB
 
-### Как запускать
+### How to launch
 
->**Перед началом:** на всякий случай лучше вручную создать файл data/knb_cred.json с таким содержимым:
+>**Before you go:** for a good measure create `data/knb_cred.json` with contents like this:
 ```
 {
     "access_token": "test",
@@ -18,9 +18,9 @@
 }
 ```
 
-Затем нужно указать env вары: `CLIENT_ID`, `CLIENT_SECRET`, `KNB_LOGIN`, `KNB_PASS` (например в конфе supervisord)
+Set env vars: `CLIENT_ID`, `CLIENT_SECRET`, `KNB_LOGIN`, `KNB_PASS` (in supervisord conf. for example)
 
-Наконец
+Finally
 
 ```
 npm install
@@ -28,11 +28,11 @@ npm install
 node server.js
 ```
 
-И на этом все. По дефолту прога запустится на 3000 порту. Можно замаппить на другой порт с env варой `E3_PORT`
+That's it! Uses port 3000 by default. You can change it by setting an `E3_PORT` env var.
 
-Кастомный путь к монге можно положить в env вару `MONGO_URL`
+Custom mongo url can be set with `MONGO_URL` env var.
 
-### Как менять
+### Development
 
 ```
 npm install --only=dev
@@ -40,22 +40,20 @@ npm install --only=dev
 npm run watch
 ```
 
-Затем можно идти менять сервер / клиент - все будет перегенерится на лету.
+Now you can dive into the development - everything will be rebuilt on the fly
 
-### Изменение рубрики
+### Change the rubric
 
-Чтобы быстро изменить рубрику - нужно поменять значение env вары `E3_RUBRIC` на нужный слаг, например `e3_2018`. После чего необходимо очистить коллекции `articleitems`, `newsitems` и `bingos` в mongodb на node02.kanobu.ru, монга живет там на `27020` порту. Затем раздел начнет обновлять статьи и новости в автоматическом режиме.
+You can change the target rubric by setting the `E3_RUBRIC` env var. Then remove everything from `articleitems`, `newsitems` and `bingos` collections and you're good to go
 
-Список стримов задается в `server.js` в простом JS-объекте.
-
-### Билд в прод
+### Production build
 
 ```
 npm run build:prod
 ```
 
-Минифицирует все жски и возьмет прод-билд реакта
+Minifies everything
 
-### Остановка
+### Stopping the process
 
-Чтобы погасить сервис - нужно удалить его конфигурацию из `/etc/supervisord.conf` и рестартануть супервизорд (т.к.  `supervisorctl` на node02 почему-то не работает)
+If used with supervisord - just stop the process with supervisorctl and remove everything from the `/etc/supervisord.conf`
