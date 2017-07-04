@@ -1,0 +1,24 @@
+{
+  "name": "knb-e3-2017",
+  "description": "Kanobu e3 2017 portal",
+  "main": "server.js",
+  "authors": [
+    "orels1"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "nodejs"
+  ],
+  "homepage": "https://github.com/Kanobu/e3-2017",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fabric.js": "fabric#^1.7.12"
+  }
+}

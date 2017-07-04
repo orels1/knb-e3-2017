@@ -1,0 +1,37 @@
+//
+   Created by orel- on 24/May/17.
+doctype html
+html
+  head
+    title E3 2017: игры, новости, расписание конференций, онлайн-трансляции, видео, трейлеры
+    meta(name="viewport",
+    content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no")
+    meta(name="description" content="Этот раздел Канобу посвящен E3 2017. Здесь вы сможете найти расписание и даты проведения выставки, все новости, трейлеры, видео, трансляции и игры конференции, а также любую другую информацию о E3 2017.")
+    meta(property="og:description"  content="E3 2017: игры, новости, расписание конференций, онлайн-трансляции, видео, трейлеры")
+    meta(property="og:title" content="Канобу E3 2017 | Новости, Видео, Трансляции, Расписание, Игры")
+    meta(property="og:url" content="http://e3.kanobu.ru")
+    meta(property="og:image" content=sharing)
+    meta(property="og:type" content="article")
+    meta(property="twitter:domain" content="Kanobu.ru")
+    meta(property="twiiter:image" content=sharing)
+    meta(property="twitter:site" content="@kanobu_ru")
+    meta(property="twitter:card" content="summary_large_image")
+    meta(property="twitter:description" content="Е3 2017 на Канобу. Все главные новости с выставки, а также трейлеры и прямые трансляции.")
+    link(rel="shortcut icon" href="/static/icon.png" type="image/x-icon")
+    link(rel="icon" href="/static/icon.png" type="image/x-icon")
+    link(rel="canonical" href=canonical)
+    link(rel="stylesheet" href="/static/styles.css")
+    script.
+      var APP_PROPS = !{props}
+  body
+    #app!= html
+    script(src="/static/bundle.js")
+    script(src="//embed.kanobu.ru/counters/kanobu.js")
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4983455-19', 'auto');
+      ga('send', 'pageview');

@@ -1,0 +1,144 @@
+doctype html
+html
+  head
+    title E3 2017
+    meta(name="viewport",
+    content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no")
+    link(rel="stylesheet" href="static/styles.css")
+  body
+    // topbar
+    .topbar
+      .logo
+        .logo__image
+        .logo__text Канобу E3 2017
+      nav.menu.menu_horizontal
+        a.menu__item(href="//kanobu.ru/games") Игры
+        a.menu__item(href="//kanobu.ru/news") Новости
+        a.menu__item(href="//kanobu.ru/articles") Статьи
+        a.menu__item(href="//kanobu.ru/reviews") Рецензии
+        a.menu__item(href="//kanobu.ru/pub") Паб
+        a.menu__item(href="//kanobu.ru/shouts/all") Вопли
+        a.menu__item(href="//kanobu.ru/project/cybersport") Киберспорт
+      a.back-to-knb(href="//kanobu.ru") Перейти на kanobu.ru
+    // header & streams
+    section.header
+      .partners.header__partners.container
+        h1.partners__name
+          |E3 2017
+          small На Канобу
+        .partners__list
+          .partners__list-title При поддержке
+          .partners__list-item Рокетбанк
+      .streams.container
+        .stream-embed
+          .responsive-container
+            iframe(
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/uGT2pLlgBoU?rel=0&amp;showinfo=0"
+              frameborder="0"
+              allowfullscreen)
+        .stream-schedule
+          .stream-schedule__next.stream-schedule__next_sony
+            .stream-schedule__next-name
+              span Sony
+              small скоро
+            .timer.stream-schedule__timer
+              .timer-value
+                .timer-value__hours 02
+                .timer-value__separator :
+                .timer-value__minutes 39
+                .timer-value__separator :
+                .timer-value__seconds 04
+              .timer-due.timer-due_horizontal
+                .timer-due__date 12/06/2017
+                .timer-due__time 04:00 МСК
+          .stream-list
+            .stream-list__item.stream-list__item_pc
+              .timer-due.timer-due_vertical
+                .timer-due__date запись
+                .timer-due__time 04:00 МСК
+            .stream-list__item.stream-list__item_ms
+              .timer-due.timer-due_vertical
+                .timer-due__date запись
+                .timer-due__time 04:00 МСК
+            .stream-list__item.stream-list__item_sony
+              .timer-due.timer-due_vertical
+                .timer-due__date.timer-due__date_live в эфире
+                .timer-due__time 04:00 МСК
+            .stream-list__item.stream-list__item_ea
+              .timer-due.timer-due_vertical
+                .timer-due__date 12/06/2017
+                .timer-due__time 04:00 МСК
+            .stream-list__item.stream-list__item_nintendo
+              .timer-due.timer-due_vertical
+                .timer-due__date 12/06/2017
+                .timer-due__time 04:00 МСК  
+        .stream-menu
+          .stream-menu__block
+            .stream-menu__title Трансляции:
+            .stream-toggler
+              .stream-toggler__item.stream-toggler__item_active.stream-toggler__item_kanobu Канобу
+              .stream-toggler__item.stream-toggler__item_original Оригинал
+              .stream-toggler__item.stream-toggler__item_text Текст
+          .stream-menu__block
+            .stream-menu__title Поделиться:
+            .sharing
+          
+    // articles
+    section.articles
+      .wide-header.wide-header_black.container
+        h2.wide-header__title Статьи
+        .wide-header__carousel-nav.carousel-nav
+        .wide-header__nav-buttons.nav-buttons
+      .carousel.container
+        .carousel__wrapper
+          - var n = 0;
+          while n < 10
+            .carousel__item
+              .carousel__item-filter
+              .carousel__item-bg
+              .carousel__item-info
+                .carousel__item-title «Канобу» о лучшей игровой выставке
+                .carousel__item-subtitle Пара слов о том, какая Е3 крутая и офигенная
+            - n++;
+    // everything else
+    section.the-rest
+      .switcher.container
+        .switcher__block
+          h2.switcher__item.switcher__item_active Новости и Трейлеры
+          h2.switcher__item Бинго
+        .search.switcher__search
+          input.search__field(type="text" placeholder="Поиск")
+          .search__icon
+      .double-wrapper.container
+        .news
+          - var n = 0;
+          while n < 6
+            .news__item
+              .news__item-image
+              .news__item-info
+                a(href="//kanobu.ru/news")
+                  h3.news__item-title Дождались! The Last Guardian выйдет в этом октябре
+                .news__item-data
+                  a(href="//kanobu.ru/news").news__item-type Новости
+                  .news__item-separator |
+                  .news__item-published 23м назад
+            - n++
+        .banner.banner_240x400
+      .show-more.container
+        .show-more__button Показать еще
+    // footer
+    section.footer-container
+      .footer
+        .footer__toplinks
+          .links-list
+            a(href="//kanobu.ru/community-rules/").links-list__item Правила сообщества
+            a(href="//kanobu.ru/subscribe/").links-list__item Подпишитесь на обновления
+            a(href="//kanobu.ru/bookmarklet/").links-list__item Букмарклет
+        .footer__description Этот раздел Канобу посвящен E3 2017. Здесь вы сможете найти расписание и даты проведения выставки, все новости, трейлеры, видео, трансляции и игры конференции, а также любую другую информацию о E3 2017.
+        .footer__bottom-info
+          .footer__copyright &copy; 2008-2017 Kanobu network
+          .footer__age 18+
+          
+    

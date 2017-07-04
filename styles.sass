@@ -1,0 +1,1346 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900')
+
+$black: #0e0e0e
+$dark: #262626
+$gray: #333333
+$lgray: #999999
+$hlblue: #04a2d0
+$bgray: #1D1B1D
+
+$gradBlue: linear-gradient(to left, #032555 0%, #023c84 100%)
+$gradRed: linear-gradient(to left, #ad1a1a 0%, #d12121 100%)
+$gradDarkRed: linear-gradient(to left, #661409 0%, #7f1a0c 100%)
+$gradGreen: linear-gradient(to left, #09540a 0%, #0F7C10 100%)
+$gradOrange: linear-gradient(to left, #d1960e 0%, #e8a710 100%)
+$gradGray: linear-gradient(to left, #848481 0%, #a5a5a4 100%)
+$gradPurple: linear-gradient(to left, #27086d 0%, #3b0ea3 100%)
+
+$gradBlueV: linear-gradient(to top, #032555 0%, #023c84 100%)
+$gradRedV: linear-gradient(to top, #ad1a1a 0%, #d12121 100%)
+$gradDarkRedV: linear-gradient(to top, #661409 0%, #7f1a0c 100%)
+$gradGreenV: linear-gradient(to top, #09540a 0%, #0F7C10 100%)
+$gradOrangeV: linear-gradient(to top, #d1960e 0%, #e8a710 100%)
+$gradGrayV: linear-gradient(to top, #848481 0%, #a5a5a4 100%)
+$gradPurpleV: linear-gradient(to top, #27086d 0%, #3b0ea3 100%)
+
+// responsive breakpoints
+$huge: 1400px
+$normal: 1366px
+$small: 1174px
+$xsmall: 768px
+$xxsmall: 696px
+
+body
+  margin: 0
+  font-family: 'Roboto', sans-serif
+  overflow-x: hidden
+
+.topbar
+  display: flex
+  width: 100%
+  height: 50px
+  background: #000
+  @media (max-width: $small)
+    justify-content: center
+
+.logo
+  display: flex
+  -webkit-box-flex: 1
+  flex-basis: 0
+  flex-grow: 1
+  max-width: 100%
+  @media (max-width: $small)
+    justify-content: center
+
+.logo__image
+  width: 50px
+  height: 50px
+  background: url('/static/icon.png') center center no-repeat
+  background-size: 80%
+  margin-left: 5px
+  @media (max-width: $small)
+    margin-left: 0
+
+  &:hover
+    animation: roll 500ms
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+
+@keyframes roll
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.logo__text
+  color: #fff
+  line-height: 50px
+  font-weight: bold
+  font-size: 20px
+
+.menu
+  -webkit-box-flex: 0
+  flex: 0 0 50%
+  max-width: 50%
+  display: flex
+  justify-content: center
+  align-items: center
+  @media (max-width: $small)
+    display: none
+
+.menu_horizontal
+  flex-direction: row
+
+.menu_vertical
+  flex-direction: column
+
+.menu__item
+  color: #fff
+  line-height: 50px
+  font-size: 14px
+  color: rgba(255,255,255,0.7)
+  padding: 0 20px
+  transition: color 150ms ease
+  text-decoration: none !important
+
+  &:hover
+    color: rgba(255,255,255,1)
+
+.back-to-knb
+  -webkit-box-flex: 1
+  flex-basis: 0
+  flex-grow: 1
+  max-width: 100%
+  font-weight: normal
+  color: rgba(255,255,255,0.6)
+  line-height: 50px
+  padding: 0 20px 0 0
+  transition: color 300ms ease
+  text-align: right
+  text-decoration: none !important
+  @media (max-width: $small)
+    display: none
+
+  &:hover
+    color: rgba(255,255,255,1)
+
+.container
+  max-width: 1170px
+
+.header
+  display: flex
+  flex-direction: column
+  width: 100%
+  align-items: center
+  position: relative
+  background: $black
+
+.header__bg
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-position: bottom center
+  background-repeat: no-repeat
+  background-size: cover
+  animation-iteration-count: 1
+  animation-timing-function: ease-in-out
+  animation-fill-mode: forwards
+  animation-duration: 300ms
+  opacity: 1
+  z-index: 7
+
+
+.header__bg_sony
+  animation-name: switch-bg-sony
+
+.header__bg_ea
+  animation-name: switch-bg-ea
+
+.header__bg_xbox
+  animation-name: switch-bg-xbox
+
+.header__bg_bethesda
+  animation-name: switch-bg-bethesda
+
+.header__bg_pc
+  animation-name: switch-bg-pc
+
+.header__bg_ubisoft
+  animation-name: switch-bg-ubisoft
+
+@keyframes switch-bg-sony
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+    background-image: $gradBlueV
+
+@keyframes switch-bg-ea
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+    background-image: $gradRedV
+
+@keyframes switch-bg-xbox
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+    background-image: $gradGreenV
+
+@keyframes switch-bg-bethesda
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+    background-image: $gradPurpleV
+
+@keyframes switch-bg-pc
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+    background-image: $gradDarkRedV
+
+@keyframes switch-bg-ubisoft
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+    background-image: $gradGrayV
+
+.header__partners
+  margin-top: 50px
+  margin-bottom: 50px
+
+.partners
+  width: 100%
+  position: relative
+  z-index: 8
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  @media (max-width: $small)
+    justify-content: center
+
+.partners__name-container
+  display: flex
+  flex-direction: column
+
+  small
+    color: #fff
+    font-size: 22px
+    font-weight: 100
+    padding-left: 3px
+    text-transform: uppercase
+    @media (max-width: $small)
+      display: none
+
+.partners__name
+  font-size: 70px
+  color: #fff
+  font-weight: normal
+  margin: 0
+  padding: 0
+  @media (max-width: $small)
+    display: none
+
+.partners__list
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  @media (max-width: $small)
+    justify-content: center
+    flex-direction: column
+
+.partners__list-title
+  font-weight: 100
+  font-size: 22px
+  color: #fff
+  text-transform: uppercase
+  padding: 0 25px
+  @media (max-width: $small)
+    padding: 0
+
+.partners__list-item
+  display: flex
+  flex-direction: column
+  align-items: center
+  color: #fff
+  text-transform: uppercase
+  padding: 0 25px
+  @media (max-width: $small)
+    padding: 25px 0
+
+  &:last-child
+    padding: 0 0 0 25px
+    @media (max-width: $small)
+      padding: 25px 0 0 0
+
+  img
+    max-height: 70px
+
+.partners__list-item-rank
+  font-size: 12px
+  font-weight: 100
+  margin-top: 10px
+
+
+.streams
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  position: relative
+  z-index: 12
+
+.stream-embed
+  // TODO: make responsive
+  width: 100%
+  max-width: 830px
+  @media (max-width: $small)
+    max-width: 100%
+
+.stream-schedule
+  // TODO: make responsive
+  max-width: 340px
+  width: 100%
+  background: #1c1c1c
+  flex: 1 0
+  @media (max-width: $small)
+    max-width: 100%
+    order: 3
+
+.stream-schedule__next
+  width: 100%
+  display: flex
+  padding: 17px
+  background-image: $gradBlue
+  justify-content: space-between
+  align-items: center
+  box-sizing: border-box
+  transition: background-image 600ms ease-in-out
+
+.stream-schedule__next_sony
+  background-image: $gradBlue
+
+.stream-schedule__next_ea
+  background-image: $gradRed
+
+.stream-schedule__next_xbox
+  background-image: $gradGreen
+
+.stream-schedule__next_bethesda
+  background-image: $gradPurple
+
+.stream-schedule__next_ubisoft
+  background-image: $gradGray
+
+.stream-schedule__next_pc
+  background-image: $gradDarkRed
+
+.stream-schedule__next-name
+  display: flex
+  flex-direction: column
+  padding: 0 0 0 10px
+  color: #fff
+
+  span
+    font-size: 24px
+    font-weight: bold
+
+  small
+    font-size: 14px
+    font-weight: 100
+    text-transform: uppercase
+
+.stream-schedule__timer
+  padding-right: 10px
+
+.timer
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.timer-value
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  color: #fff
+  font-size: 36px
+  font-weight: bold
+
+.timer-value__separator
+  padding: 0 4px
+
+.timer-due
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  font-size: 14px
+  line-height: 20px
+  color: #fff
+  text-align: right
+
+.timer-due_vertical
+  flex-direction: column
+  align-items: flex-end
+
+.timer-due__date
+  font-weight: 300
+  text-transform: uppercase
+
+.timer-due__time
+  font-weight: bold
+
+.stream-list
+  padding: 2px
+  box-sizing: border-box
+  width: 100%
+  height: 371px
+  overflow-y: scroll
+  @media (max-width: $small)
+    height: auto
+    overflow: visible
+
+  &::-webkit-scrollbar 
+    width: 10px
+    background: #0e0e0e
+    
+  &::-webkit-scrollbar-track
+    border: none
+    background: transparent
+
+  &::-webkit-scrollbar-track-piece
+    border: none
+    background: transparent
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background: rgba(0,0,0,0.2)
+    border: 1px solid rgba(255,255,255,0.2)
+    transition: border 150ms ease, background 150ms ease
+
+    &:hover
+      background: rgba(0,0,0,0.6)
+      border: 1px solid rgba(255,255,255,0.6)
+
+.stream-list__item
+  box-sizing: border-box
+  display: flex
+  justify-content: space-between
+  cursor: pointer
+  width: 100%
+  margin: 2px
+  padding: 15px 30px
+  background: #0e0e0e
+  border-left: 0px solid #fff
+  transition: background 150ms ease, border-left 150ms ease
+
+  &:hover
+
+    &.stream-list__item_sony
+      background: $gradBlue
+      border-left: 4px solid #fff
+
+    &.stream-list__item_pc
+      background: $gradDarkRed
+      border-left: 4px solid #fff
+
+    &.stream-list__item_ea
+      background: $gradRed
+      border-left: 4px solid #fff
+
+    &.stream-list__item_bethesda
+      background: $gradPurple
+      border-left: 4px solid #fff
+
+    &.stream-list__item_xbox
+      background: $gradGreen
+      border-left: 4px solid #fff
+
+    &.stream-list__item_ubisoft
+      background: $gradGray
+      border-left: 4px solid #fff
+
+.stream-list__item_sony_active
+  background: $gradBlue
+  border-left: 4px solid #fff
+
+.stream-list__item_pc_active
+  background: $gradDarkRed
+  border-left: 4px solid #fff
+
+.stream-list__item_ea_active
+  background: $gradRed
+  border-left: 4px solid #fff
+
+.stream-list__item_bethesda_active
+  background: $gradPurple
+  border-left: 4px solid #fff
+
+.stream-list__item_xbox_active
+  background: $gradGreen
+  border-left: 4px solid #fff
+
+.stream-list__item_ubisoft_active
+  background: $gradGray
+  border-left: 4px solid #fff
+
+.stream-list__name
+  padding-left: 50px
+  background-size: 32px 32px
+  background-position: left center
+  background-repeat: no-repeat
+
+.stream-list__name_ea
+  background-image: url('/static/icons/ea.png')
+
+.stream-list__name_xbox
+  background-image: url('/static/icons/xbox.png')
+
+.stream-list__name_pc
+  background-image: url('/static/icons/pc.png')
+  background-size: 116px
+  padding-left: 116px
+
+.stream-list__name_sony
+  background-image: url('/static/icons/sony.png')
+  background-size: 32px 27px
+
+.stream-list__name_bethesda
+  background-image: url('/static/icons/bethesda.png')
+
+.stream-list__name_ubisoft
+  background-image: url('/static/icons/ubisoft.png')
+
+.stream-list__title
+  color: #fff
+  font-weight: 300
+  font-size: 18px
+  line-height: 40px
+
+.stream-list__title_pc
+  display: none
+
+.stream-menu
+  display: flex
+  width: 100%
+  height: 50px
+  background: #fff
+  padding: 0 20px
+  justify-content: space-between
+  @media (max-width: $small)
+    justify-content: center
+
+.stream-menu__block
+  display: flex
+
+.stream-menu__block_sharing
+  @media (max-width: $small)
+    display: none
+
+.stream-menu__block_vertical
+  flex-direction: column
+
+.stream-menu__title
+  font-size: 14px
+  color: $gray
+  text-transform: uppercase
+  line-height: 50px
+  margin-right: 10px
+  @media (max-width: $small)
+    display: none
+
+.stream-toggler
+  display: flex
+
+.stream-toggler__item
+  line-height: 50px
+  padding: 0 20px
+  margin: 0 10px
+  font-size: 14px
+  color: $lgray
+  text-transform: uppercase
+  cursor: pointer
+  transition: color 150ms ease, box-shadow 150ms ease
+
+  &:hover
+    color: $hlblue
+    box-shadow: inset 0 -2px $hlblue
+
+.stream-toggler__item_active
+  color: $hlblue
+  box-shadow: inset 0 -2px $hlblue
+
+.articles
+  width: 100%
+  position: relative
+  z-index: 10
+  box-shadow: 0 -4px 36px rgba(0,0,0,0.5)
+  background: $black
+  flex-direction: column
+  align-items: center
+  display: flex
+  padding: 0 0 5px 0
+
+.wide-block
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.wide-header
+  display: flex
+  width: 100%
+  padding: 0 20px
+  height: 75px
+  box-sizing: border-box
+  justify-content: space-between
+
+.wide-header_black
+  background: $black
+  color: #fff
+
+.wide-header__title
+  font-size: 20px
+  font-weight: 300
+  text-transform: uppercase
+  margin: 0
+  line-height: 75px
+
+.carousel-nav
+  display: flex
+  justify-content: center
+  align-items: center
+
+.carousel-nav__dot
+  width: 10px
+  height: 10px
+  border-radius: 100%
+  border: 2px solid #fff
+  transition: background 150ms ease
+  margin: 0 5px
+  cursor: pointer
+
+  &:hover
+    background: #fff
+
+.carousel-nav__dot_active
+  background: #fff
+  
+.carousel
+  display: flex
+  width: 100%
+  overflow-x: hidden
+  background: url('/static/carousel-bg.png') center left no-repeat
+  @media (max-width: $small)
+    overflow-x: scroll
+
+  &::-webkit-scrollbar
+    @media (max-width: $small)
+      display: none
+
+  a
+    text-decoration: none
+
+.carousel__wrapper
+  display: flex
+  transition: transform 1s ease-in-out
+
+.carousel__item
+  width: 292px
+  height: 340px
+  position: relative
+  margin-right: 1px
+  display: flex
+  align-items: flex-end
+
+  &:hover
+
+    .carousel__item-filter
+      background-position: 0% 75%
+
+    .carousel__item-info
+      padding: 0 30px 40px 30px
+
+.carousel__item-filter
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 11
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%)
+  background-size: 200% 200%
+  background-position: 100% 50%
+  transition: background-position 300ms ease
+
+.carousel__item-bg
+  position: absolute
+  background-size: cover
+  background-position: center center
+  width: 100%
+  height: 100%
+  z-index: 10
+  background-color: $gray
+
+.carousel__item-info
+  padding: 0 30px 30px 30px
+  position: relative
+  z-index: 12
+  transition: padding 300ms ease
+
+.carousel__item-title
+  font-size: 19px
+  font-weight: 500
+  padding: 0 0 7px 0
+  color: #fff
+
+
+.carousel__item-subtitle
+  font-size: 16px
+  font-weight: 100
+  color: #fff
+
+.the-rest
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  background: #fff
+  position: relative
+  z-index: 12
+
+.switcher
+  display: flex
+  justify-content: space-between
+  width: 100%
+  padding: 46px 110px 0 110px
+  box-sizing: border-box
+  flex-wrap: wrap
+  @media (max-width: $small)
+    padding: 46px 30px 0 30px
+
+
+.switcher__block
+  display: flex
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+  @media (max-width: $small)
+    margin-bottom: 20px
+
+.switcher__item
+  position: relative
+  font-size: 20px
+  font-weight: 300
+  color: $lgray
+  text-transform: uppercase
+  padding: 0 0 20px 0
+  transition: color 150ms ease, box-shadow 150ms ease
+  cursor: pointer
+  margin: 0 60px 0 0
+
+  &:hover
+    color: $hlblue
+    box-shadow: inset 0 -2px $hlblue
+
+.switcher__item_active
+  color: $hlblue
+  box-shadow: inset 0 -2px $hlblue
+
+.switcher__item-coming-soon
+
+  &::after
+    content: 'Скоро'
+    position: absolute
+    top: 1px
+    right: -60px
+    font-size: 12px
+    background: #e2402f
+    padding: 3px 6px
+    border-radius: 20px
+    color: #fff
+    font-weight: bold
+
+.switcher__item-new
+
+  &::after
+    content: 'Старт!'
+    position: absolute
+    top: 1px
+    right: -60px
+    font-size: 12px
+    background: #e2402f
+    padding: 3px 6px
+    border-radius: 20px
+    color: #fff
+    font-weight: bold
+
+.search
+  display: flex
+  @media (max-width: $small)
+    width: 100%
+
+.search__field
+  border: none
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+  font-size: 20px
+  font-weight: 300
+  color: $black
+  padding-bottom: 20px
+  outline: none
+  min-width: 415px
+  cursor: pointer
+  transition: box-shadow 150ms ease
+  @media (max-width: $small)
+    width: 100%
+    max-width: 100%
+    min-width: auto
+
+  &:focus
+    box-shadow: inset 0 -2px $hlblue
+
+.search__icon
+  padding-left: 20px
+  height: 20px
+  padding-bottom: 20px
+
+.double-wrapper
+  display: flex
+  justify-content: space-between
+  padding: 40px 110px 0 110px
+  width: 100%
+  box-sizing: border-box
+  @media (max-width: $small)
+    padding: 40px 30px 0 30px
+
+.news
+  display: flex
+  flex-direction: column
+  max-width: 668px
+  width: 100%
+  @media (max-width: $small)
+    max-width: 600px
+  @media (max-width: $xsmall)
+    max-width: 100%
+
+.news__item
+  display: flex
+  padding: 0 0 40px 0
+
+.news__item-image-container
+  width: 230px
+  height: 166px
+  position: relative
+  @media (max-width: $xsmall)
+    width: 120px
+    height: 86px
+
+  &:hover
+
+    .news__item-image-filter
+      background: rgba(0, 0, 0, 0.2)
+
+    .news__item-image-filter_trailer
+      background: rgba(0,0,0,0.6)
+
+.news__item-trailer-overlay
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 12
+  background: url('/static/icons/play-circle.svg') center center no-repeat
+  background-size: 25%
+
+.news__item-image-filter
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 11
+  background: rgba(0, 0, 0, 0)
+  transition: background 300ms ease
+
+.news__item-image-filter_trailer
+  background: rgba(0,0,0,0.4)
+
+.news__item-image
+  position: absolute
+  z-index: 10
+  width: 100%
+  height: 100%
+  background-size: cover
+  flex-shrink: 0
+
+.news__item-info
+  margin: 10px 0 0 20px
+  display: flex
+  flex-direction: column
+
+  a
+    text-decoration: none
+    
+  a:link
+    color: #000
+
+  a:visited
+    color: $lgray
+
+.news__item-title
+  margin: 0
+  padding: 0 0 20px 0
+  font-size: 18px
+  transition: color 150ms ease
+  @media (max-width: $xsmall)
+    font-size: 14px
+    padding: 0 0 10px 0
+
+  &:hover
+    color: $hlblue
+
+.news__item-data
+  border-top: 1px solid rgba(0,0,0,0.1)
+  padding-top: 20px
+  display: flex
+  max-width: 60%
+  font-size: 14px
+  font-weight: 300
+  color: $lgray
+  @media (max-width: $xsmall)
+    font-size: 12px
+    padding-top: 10px
+    max-width: 90%
+
+a.news__item-type, a.news__item-type:visited, .news_item-type
+  color: $lgray
+  transition: color 150ms ease
+
+  &:hover
+    color: $hlblue
+
+.news__item-separator
+  padding: 0 10px 0 10px
+
+.bingo
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.canvas-container // fabricjs inner class
+  @media (max-width: $xxsmall)
+    width: 100% !important
+    max-width: 650px !important
+    height: 0 !important
+    position: relative
+    overflow: hidden
+    padding-bottom: 129%
+
+.bingo__canvas
+  @media (max-width: $xxsmall)
+    position: absolute
+    left: 0
+    top: 0
+    width: 100% !important
+    height: 100% !important
+  
+
+.bingo__controls
+  @media (max-width: $xxsmall)
+    flex-direction: column
+    height: auto
+    min-height: 80px * 3
+    padding-bottom: 80px
+
+.bingo__fallback  
+  display: none
+  margin: 20px 0
+  line-height: 22px
+  font-size: 16px
+  color: $dark
+  font-weight: 300
+  @media (max-width: $xxsmall)
+    display: block
+
+.controls
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background: $bgray
+  height: 80px
+  width: 100%
+  max-width: 650px
+
+.controls__block
+  position: relative
+  z-index: 3
+  height: 80px
+  box-sizing: border-box
+  color: #fff
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background: $bgray
+  transition: all 150ms ease-in-out
+  @media (max-width: $xxsmall)
+    width: 100%
+    flex-direction: column
+    overflow: hidden
+
+.controls__block_expanded
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 4
+  @media (max-width: $xxsmall)
+    height: 100%
+
+  .controls__button
+    min-width: 120px
+
+.controls__button
+  padding: 20px 20px 20px 80px
+  line-height: 40px
+  height: 40px
+  background-position: 20px center
+  background-repeat: no-repeat
+  background-size: 40px
+  background-color: $bgray
+  cursor: pointer
+  transition: background 150ms ease
+  @media (max-width: $xxsmall)
+    width: 100%
+    box-sizing: border-box
+    height: 80px
+
+  &:hover
+    background-color: #302d30
+
+.controls__button_hidden
+  display: none
+
+.controls__button_visible
+  display: block
+
+.controls__button_text
+  background-image: url('/static/icons/text.svg')
+
+.controls__button_image
+  background-image: url('/static/icons/image.svg')
+
+.controls__button_save
+  background-image: url('/static/icons/save.svg')
+
+.controls__button_share
+  padding: 20px
+  @media (max-width: $xxsmall)
+    display: flex
+    height: 80px
+    box-sizing: border-box
+    justify-content: center
+
+.controls__button_download
+  background-image: url('/static/icons/download.svg')
+  min-width: auto !important
+
+.controls__field
+  display: none
+  padding: 20px
+  height: 40px
+  width: 100%
+  @media (max-width: $xxsmall)
+    box-sizing: border-box
+    height: 80px
+
+.controls__input
+  background: none
+  border: none
+  border-bottom: 2px solid #fff
+  line-height: 30px
+  font-size: 18px
+  width: 100%
+  outline: none
+  color: #fff
+
+.controls__field_visible
+  display: block
+
+.controls__field_hidden
+  display: none
+
+.controls__func-button
+  display: none
+  min-width: 40px
+  padding: 20px
+  height: 40px
+  width: 40px
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: 40px
+  background-color: $bgray
+  cursor: pointer
+  transition: background 150ms ease
+  @media (max-width: $xxsmall)
+    width: 100%
+    box-sizing: border-box
+    padding: 40px 20px
+
+  &:hover
+    background-color: #302d30
+
+.controls__func-button_close
+  background-image: url('/static/icons/close.svg')
+
+.controls__func-button_add
+  background-image: url('/static/icons/plus.svg')
+
+.controls__func-button_visible
+  display: block
+
+.bingo__link
+  margin: 40px 0 20px 0
+  padding: 20px 40px
+  width: 100%
+  max-width: 650px
+  text-align: center
+  box-sizing: border-box
+  background: $bgray
+  color: #fff
+  font-size: 14px
+  font-weight: 100
+  
+  small
+    display: block
+    padding-top: 10px
+    font-size: 12px
+    font-weight: bold
+
+.bingo__desc
+  padding: 10px 0 0 0 
+  font-size: 16px
+  font-weight: 300
+  line-height: 24px
+  max-width: 650px
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  @media (max-width: $xxsmall)
+    padding-bottom: 160px
+
+.bingo__desc_intro
+  padding: 0 0 40px
+
+.bingo__desc-title
+  margin-top: 10px
+  font-size: 24px
+  font-weight: 700
+  line-height: 44px
+
+.bingo__desc-text
+
+  a
+    text-decoration: none
+    font-weight: 900
+    color: rgba(52, 152, 219,1.0)
+
+.order-button
+  background: #F47923
+  padding: 20px 40px
+  font-weight: 500
+  width: 100%
+  box-sizing: border-box
+  text-align: center
+  color: #fff
+  cursor: pointer
+  font-size: 22px
+  line-height: 50px
+  border: 1px solid rgba($bgray, 0)
+  transition: border 300ms ease
+  margin: 20px 0 20px 0
+
+  &:hover
+    border: 1px solid rgba($bgray,1)
+
+.order-form
+  background: rgba(0,0,0,0.1)
+  overflow-y: hidden
+  height: 0
+  width: 100%
+  max-width: 650px
+  margin: 20px 0
+  transition: height 300ms ease
+
+.order-form_visible
+  height: 326px
+
+.bingo__desc-warning
+  width: 100%
+  margin-top: 40px
+  padding: 20px 30px
+  color: #fff
+  box-sizing: border-box
+  font-size: 12px
+  background: rgba(192, 57, 43,1.0)
+
+.banner
+  display: flex
+  flex-grow: 0
+  flex-shrink: 0
+  background: transparent
+  @media (max-width: $xsmall)
+    display: none
+
+.banner_240x400
+  width: 240px
+  height: 400px
+
+.show-more
+  width: 100%
+  justify-content: center
+  display: flex
+
+.show-more__button
+  cursor: pointer
+  padding: 0 35px
+  line-height: 40px
+  border-radius: 100px
+  border: 1px solid $hlblue
+  color: $hlblue
+  transition: color 150ms ease, background 150ms ease
+  text-align: center
+  font-size: 14px
+  font-weight: 300
+
+  &:hover
+    color: #fff
+    background: $hlblue
+
+.sharing
+  display: flex
+  height: 50px
+  align-items: center
+
+.sharing__button
+  width: 35px
+  height: 35px
+  margin: 0 5px
+  background-image: url('/static/socials.svg')
+  background-repeat: no-repeat
+  border-radius: 50%
+  transition: opacity 150ms ease
+  
+  &:hover
+    opacity: 0.8
+
+  &:last-child
+    margin-right: 0
+
+.sharing__button_vk
+  background-color: #6383A8
+  background-position: -43px -2px
+
+.sharing__button_tw
+  background-color: #55ACEE
+  background-position: -83px -2px
+
+.sharing__button_fb
+  background-color: #3B5998
+  background-position: -3px -3px
+
+.footer-container
+  display: flex
+  width: 100%
+  background: $dark
+  margin-top: 40px
+
+.footer
+  display: flex
+  width: 100%
+  flex-direction: column
+  align-items: center
+
+.footer__toplinks
+  padding: 10px 30px
+  width: 100%
+  align-items: center
+  box-sizing: border-box
+  display: flex
+  justify-content: space-between
+  border-bottom: 1px solid rgba(255,255,255,0.1)
+  @media (max-width: $small)
+    padding: 30px
+    flex-wrap: wrap
+
+.links-list
+  display: flex
+  flex-wrap: wrap
+
+.links-list__item
+  display: block
+  color: #fff
+  font-size: 12px
+  margin-right: 30px
+  text-decoration: none
+  transition: color 150ms ease
+  @media (max-width: $small)
+    margin-bottom: 20px
+
+  &:hover
+    color: $hlblue
+
+.footer__description
+  padding: 40px 30px
+  box-sizing: border-box
+  width: 100%
+  max-width: 800px
+  font-size: 14px
+  color: #fff
+  text-align: center
+
+.footer__bottom-info
+  padding: 30px
+  width: 100%
+  box-sizing: border-box
+  display: flex
+  justify-content: space-between
+  border-top: 1px solid rgba(255,255,255,0.1)
+
+.footer__copyright
+  color: $lgray
+  font-size: 12px
+
+.footer__age
+  background: $gray
+  color: rgba(255,255,255,0.6)
+  font-size: 14px
+  font-weight: 500
+  padding: 4px 10px
+
+// responsive fixes
+.responsive-container
+  position: relative
+  padding-bottom: 56.25%
+
+  iframe, img
+    position: absolute
+    top: 0
+    left: 0
